@@ -1672,5 +1672,4 @@ export default function NapcenLandingPage() {
       </main>
     </div >
   );
-}        
-    </div>
+}
