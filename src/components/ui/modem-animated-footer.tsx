@@ -13,7 +13,8 @@ export function cn(...inputs: (string | undefined | null | false)[]) {
 
 interface FooterLink {
   label: string;
-  href: string;
+  href?: string;
+  onClick?: () => void;
 }
 
 interface SocialLink {
@@ -81,13 +82,23 @@ export const Footer = ({
               {navLinks.length > 0 && (
                 <div className="flex flex-wrap justify-center gap-8 text-sm font-medium text-slate-400 max-w-full px-4 mt-4">
                   {navLinks.map((link, index) => (
-                    <Link
-                      key={index}
-                      className="hover:text-white transition-colors duration-300"
-                      href={link.href}
-                    >
-                      {link.label}
-                    </Link>
+                    link.onClick ? (
+                      <button
+                        key={index}
+                        className="hover:text-white transition-colors duration-300"
+                        onClick={link.onClick}
+                      >
+                        {link.label}
+                      </button>
+                    ) : (
+                      <Link
+                        key={index}
+                        className="hover:text-white transition-colors duration-300"
+                        href={link.href || "#"}
+                      >
+                        {link.label}
+                      </Link>
+                    )
                   ))}
                 </div>
               )}

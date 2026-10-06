@@ -68,6 +68,14 @@ const clientTestimonials = [
   },
 ];
 
+const scrollToSection = (id: string) => {
+  const element = document.getElementById(id);
+  if (element) {
+    const y = element.getBoundingClientRect().top + window.scrollY - 80;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  }
+};
+
 export default function NapcenLandingPage() {
   const [formData, setFormData] = useState({
     name: "", company: "", email: "", phone: "", scrubber: "", pollutant: "", airflow: "", description: ""
@@ -138,17 +146,17 @@ export default function NapcenLandingPage() {
       {/* HEADER */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/50 shadow-sm">
         <div className="container mx-auto px-6 h-20 flex items-center justify-between max-w-7xl">
-          <a href="#" className="flex items-center gap-3">
+          <button onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="flex items-center gap-3">
             <Image src="/Napcen-logo.webp" alt="NAPCEN Logo" width={140} height={50} className="object-contain" />
-          </a>
+          </button>
 
           <nav className="hidden md:flex gap-8 text-sm font-bold text-slate-700">
-            <a href="#products" className="hover:text-primary-blue transition-colors">Scrubbers</a>
-            <a href="#process" className="hover:text-primary-blue transition-colors">How it works</a>
-            <a href="#engineering-checklist" className="hover:text-primary-blue transition-colors">Engineering</a>
-            <a href="#industries" className="hover:text-primary-blue transition-colors">Industries</a>
-            <a href="#about" className="hover:text-primary-blue transition-colors">Company</a>
-            <a href="#faq" className="hover:text-primary-blue transition-colors">FAQ</a>
+            <button onClick={() => scrollToSection("products")} className="hover:text-primary-blue transition-colors">Scrubbers</button>
+            <button onClick={() => scrollToSection("process")} className="hover:text-primary-blue transition-colors">How it works</button>
+            <button onClick={() => scrollToSection("engineering-checklist")} className="hover:text-primary-blue transition-colors">Engineering</button>
+            <button onClick={() => scrollToSection("industries")} className="hover:text-primary-blue transition-colors">Industries</button>
+            <button onClick={() => scrollToSection("about")} className="hover:text-primary-blue transition-colors">Company</button>
+            <button onClick={() => scrollToSection("faq")} className="hover:text-primary-blue transition-colors">FAQ</button>
 
           </nav>
         </div>
@@ -185,12 +193,12 @@ export default function NapcenLandingPage() {
                 </p>
 
                 <div className="flex flex-wrap items-center gap-4 pb-8 w-full">
-                  <a href="#contact" className="bg-primary-blue  text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl text-sm flex items-center gap-2">
+                  <button onClick={() => scrollToSection("contact")} className="bg-primary-blue  text-white font-bold py-4 px-8 rounded-full transition-all shadow-lg hover:shadow-xl text-sm flex items-center gap-2">
                     Discuss Your Application <ArrowRight size={16} />
-                  </a>
-                  <a href="#products" className="bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold py-4 px-8 rounded-full transition-all shadow-sm text-sm flex items-center gap-2">
+                  </button>
+                  <button onClick={() => scrollToSection("products")} className="bg-white border border-slate-200 hover:border-primary-blue text-slate-700 hover:text-primary-blue font-bold py-4 px-8 rounded-full transition-all shadow-sm text-sm flex items-center gap-2">
                     Explore Wet Scrubbers
-                  </a>
+                  </button>
                 </div>
 
                 <div className="flex flex-row justify-between items-start w-full pr-6 md:pr-12 lg:pr-16 xl:pr-20 pt-8 gap-2 md:gap-4 overflow-x-auto hide-scrollbar pb-2">
@@ -590,10 +598,10 @@ export default function NapcenLandingPage() {
                   A good scrubber starts with correct process information. Our workflow is structured around your actual emission-control requirement.
                 </p>
 
-                <a href="#contact" className="inline-flex items-center gap-2 bg-white text-black font-bold text-[15px] px-8 py-3.5 rounded-xl hover:bg-slate-200 transition-colors group">
+                <button onClick={() => scrollToSection("contact")} className="inline-flex items-center gap-2 bg-white text-black font-bold text-[15px] px-8 py-3.5 rounded-xl hover:bg-slate-200 transition-colors group">
                   Learn More
                   <ArrowRight className="w-4 h-4 group-hover:-rotate-45 transition-transform" />
-                </a>
+                </button>
               </div>
 
               {/* Right Side: Grid of Cards */}
@@ -1128,9 +1136,9 @@ export default function NapcenLandingPage() {
               </p>
 
               <div>
-                <a href="#contact" className="inline-flex items-center gap-3 bg-[#0f1b3a] hover:bg-[#1a2d5c] text-white font-bold py-4 px-9 rounded-full transition-all shadow-xl text-[14px]">
+                <button onClick={() => scrollToSection("contact")} className="inline-flex items-center gap-3 bg-[#0f1b3a] hover:bg-[#1a2d5c] text-white font-bold py-4 px-9 rounded-full transition-all shadow-xl text-[14px]">
                   Visit NAPCEN main website <ArrowRight size={18} />
-                </a>
+                </button>
               </div>
             </div>
 
@@ -1556,12 +1564,12 @@ export default function NapcenLandingPage() {
           creatorName="NAPCEN Team"
           creatorUrl="#"
           navLinks={[
-            { label: "Applications", href: "#applications" },
-            { label: "Products", href: "#products" },
-            { label: "Engineering", href: "#engineering" },
-            { label: "Industries", href: "#industries" },
-            { label: "FAQ", href: "#faq" },
-            { label: "Enquire", href: "#contact" },
+            { label: "Applications", onClick: () => scrollToSection("applications") },
+            { label: "Products", onClick: () => scrollToSection("products") },
+            { label: "Engineering", onClick: () => scrollToSection("engineering-checklist") },
+            { label: "Industries", onClick: () => scrollToSection("industries") },
+            { label: "FAQ", onClick: () => scrollToSection("faq") },
+            { label: "Enquire", onClick: () => scrollToSection("contact") },
           ]}
           socialLinks={[
             { icon: <Globe className="w-5 h-5" />, href: "#", label: "Website" },
@@ -1657,12 +1665,12 @@ export default function NapcenLandingPage() {
       </main>
 
       {/* GLOBAL FLOATING CTA BUTTON */}
-      {/* <a
-        href="#contact"
+      {/* <button
+        onClick={() => scrollToSection("contact")}
         className="fixed bottom-6 right-6 md:bottom-10 md:right-10 z-[100] bg-[#0f1b3a] hover:bg-[#1a2c5b] text-white font-black tracking-wide text-[15px] px-7 py-3.5 rounded-full shadow-[0_10px_40px_-10px_rgba(15,27,58,0.5)] transition-all duration-300 hover:-translate-y-1 flex items-center gap-2 group"
       >
         Get Wet Scrubber Quote
-      </a> */}
+      </button> */}
     </div >
   );
 }
