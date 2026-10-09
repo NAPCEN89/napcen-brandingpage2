@@ -1309,12 +1309,12 @@ export default function NapcenLandingPage() {
                         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-white/90 via-white/50 to-transparent z-10"></div>
 
                         {/* Learn More Button */}
-                        <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20 cursor-pointer">
+                        {/* <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20 cursor-pointer">
                           <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-lg group-hover:bg-[#0f1b3a] group-hover:text-white transition-colors">
                             <ArrowRight size={16} className="text-inherit" />
                           </div>
                           <span className="text-[#0f1b3a] text-[13px] font-bold group-hover:text-[#0f1b3a]/80 transition-colors">Learn more</span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </motion.div>

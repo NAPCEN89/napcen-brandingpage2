@@ -649,7 +649,7 @@ export default function NapcenLandingPage() {
                     <div key={i} className="bg-[#121212] border border-white/5 rounded-2xl p-8 min-h-[160px] flex flex-col justify-center hover:bg-[#181818] transition-colors group relative overflow-hidden">
                       {/* Large Background Icon Watermark */}
                       <Icon className="absolute -bottom-4 -right-4 w-36 h-36 text-white/10 group-hover:text-white/20 group-hover:scale-110 transition-all duration-500 pointer-events-none" strokeWidth={1.5} />
-                      
+
                       {/* Card Content */}
                       <div className="relative z-10">
                         <h3 className="text-white font-black text-xl mb-2">{item.title}</h3>
@@ -1136,9 +1136,9 @@ export default function NapcenLandingPage() {
               </p>
 
               <div>
-                <button onClick={() => scrollToSection("contact")} className="inline-flex items-center gap-3 bg-[#0f1b3a] hover:bg-[#1a2d5c] text-white font-bold py-4 px-9 rounded-full transition-all shadow-xl text-[14px]">
+                <a href="http://napcen.com/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-[#0f1b3a] hover:bg-[#1a2d5c] text-white font-bold py-4 px-9 rounded-full transition-all shadow-xl text-[14px]">
                   Visit NAPCEN main website <ArrowRight size={18} />
-                </button>
+                </a>
               </div>
             </div>
 
@@ -1264,12 +1264,12 @@ export default function NapcenLandingPage() {
                         <div className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-white/90 via-white/50 to-transparent z-10"></div>
 
                         {/* Learn More Button */}
-                        <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20 cursor-pointer">
+                        {/* <div className="absolute bottom-4 left-4 flex items-center gap-3 z-20 cursor-pointer">
                           <div className="w-9 h-9 rounded-full bg-white flex items-center justify-center shadow-lg group-hover:bg-[#0f1b3a] group-hover:text-white transition-colors">
                             <ArrowRight size={16} className="text-inherit" />
                           </div>
                           <span className="text-[#0f1b3a] text-[13px] font-bold group-hover:text-[#0f1b3a]/80 transition-colors">Learn more</span>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </motion.div>
