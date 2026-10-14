@@ -333,7 +333,7 @@ export default function NapcenLandingPage() {
 
         <LogoTicker />
         {/* WET SCRUBBER EXPLAINER SECTION */}
-        <section id="how-it-works" className="py-20 bg-white border-t border-slate-100 overflow-hidden">
+        <section id="how-it-works" className="pt-12 pb-6 sm:py-20 bg-white border-t border-slate-100 overflow-hidden">
           <div className="container mx-auto px-6 max-w-7xl">
             <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
@@ -381,12 +381,12 @@ export default function NapcenLandingPage() {
                 <p className="text-slate-500 text-[15px] leading-relaxed font-medium mb-4">
                   A wet scrubber is an air pollution control system that contacts contaminated exhaust with a liquid. Depending on the application, pollutants are transferred into the liquid by absorption, reacted with a suitable reagent, or captured when particles collide with liquid droplets.
                 </p>
-                <p className="text-slate-500 text-[15px] leading-relaxed font-medium mb-10">
+                <p className="text-slate-500 text-[15px] leading-relaxed font-medium mb-6 sm:mb-10">
                   For gas absorption, packed media can create a large wetted surface for gas–liquid contact. For particulate duty, a Venturi can accelerate the gas and atomize liquid into fine droplets to increase particle capture. A downstream mist eliminator removes entrained droplets before the treated gas leaves the system.
                 </p>
 
                 {/* 4 feature cards */}
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
                   {[
                     { num: "01", title: "Gas–liquid contact", icon: Droplet },
                     { num: "02", title: "Absorption / reaction", icon: FlaskConical },
@@ -395,14 +395,19 @@ export default function NapcenLandingPage() {
                   ].map((item) => {
                     const Icon = item.icon;
                     return (
-                      <div key={item.num} className="flex items-center gap-3 p-4 rounded-xl border border-slate-200 hover:border-[#3b82f6]/40 hover:bg-blue-50/30 transition-all group cursor-default">
-                        <div className="w-9 h-9 bg-transparent flex items-center justify-center flex-shrink-0">
-                          <Icon className="w-5 h-5 text-[#3b82f6]" strokeWidth={1.5} />
+                      <div
+                        key={item.num}
+                        className="flex flex-col sm:flex-row sm:items-center justify-between sm:justify-start gap-2 sm:gap-3 p-3 sm:p-4 min-h-[88px] sm:min-h-0 rounded-xl border border-slate-200 hover:border-[#3b82f6]/40 hover:bg-blue-50/30 transition-all group cursor-default"
+                      >
+                        <div className="w-8 h-8 sm:w-9 sm:h-9 bg-blue-50/70 sm:bg-transparent rounded-lg flex items-center justify-center shrink-0">
+                          <Icon className="w-4 h-4 sm:w-5 sm:h-5 text-[#3b82f6]" strokeWidth={1.5} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-[13px] font-black text-[#0f1b3a] leading-tight">{item.title}</div>
+                          <div className="text-[12px] sm:text-[13px] font-bold sm:font-black text-[#0f1b3a] leading-tight break-words">
+                            {item.title}
+                          </div>
                         </div>
-                        <ChevronRight className="w-3 h-3 text-slate-300 group-hover:text-[#3b82f6] flex-shrink-0 transition-colors" />
+                        <ChevronRight className="hidden sm:block w-3 h-3 text-slate-300 group-hover:text-[#3b82f6] shrink-0 transition-colors" />
                       </div>
                     );
                   })}
@@ -412,11 +417,10 @@ export default function NapcenLandingPage() {
           </div>
         </section>
         {/* PRODUCTS SECTION */}
-        <section id="products" className="py-24 bg-white relative overflow-hidden">
+        <section id="products" className="pt-2 pb-16 lg:py-24 bg-white relative overflow-hidden">
           <div className="w-full px-4 md:px-8 xl:px-12 2xl:px-16">
             {/* Header Area */}
-            {/* Header Area */}
-            <div className="relative min-h-[380px] lg:min-h-[400px] mb-8 lg:mb-1 flex items-center">
+            <div className="relative lg:min-h-[400px] mb-4 lg:mb-1 flex items-center">
 
               {/* Background Image Container */}
               <div className="absolute right-0 top-0 bottom-0 w-full lg:w-[65%] z-0 pointer-events-none">
@@ -432,13 +436,13 @@ export default function NapcenLandingPage() {
               </div>
 
               {/* Foreground Content */}
-              <div className="relative z-10 w-full py-4 lg:py-6">
+              <div className="relative z-10 w-full pt-1 pb-2 lg:py-6">
                 <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="w-full max-w-full lg:max-w-5xl">
                   {/* Title block */}
-                  <div className="flex items-center gap-3 mb-6">
+                  <div className="flex items-center gap-3 mb-2 sm:mb-6">
                     <span className="text-[#0f1b3a] font-bold text-[11px] tracking-[0.2em] uppercase">WET SCRUBBER PORTFOLIO</span>
                   </div>
-                  <h2 className="text-4xl md:text-5xl lg:text-[72px] font-black text-[#0f1b3a] leading-[1.05] tracking-tight mb-8">
+                  <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[72px] font-black text-[#0f1b3a] leading-[1.08] sm:leading-[1.05] tracking-tight mb-4 sm:mb-8">
                     Wet scrubber<br />
                     systems for different<br />
                     <span className="text-primary-blue">emission challenges</span>
@@ -942,7 +946,7 @@ export default function NapcenLandingPage() {
           </div>
         </section>
         {/* INSTALLATION SECTION */}
-        <section id="installation" className="py-24 bg-white relative overflow-hidden border-t border-slate-100">
+        <section id="installation" className="pt-12 pb-6 lg:py-24 bg-white relative overflow-hidden border-t border-slate-100">
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             <div className="w-full max-w-full overflow-hidden">
               {/* Header Section */}
@@ -951,7 +955,7 @@ export default function NapcenLandingPage() {
                 whileInView="visible"
                 viewport={{ once: true }}
                 variants={fadeInUp}
-                className="mb-16 text-center max-w-4xl mx-auto flex flex-col items-center"
+                className="mb-8 lg:mb-16 text-center max-w-4xl mx-auto flex flex-col items-center"
               >
                 <div className="flex items-center justify-center gap-2 text-primary-gray font-bold text-[11px] uppercase tracking-[0.2em] mb-3">
                   Installation & commissioning
@@ -972,7 +976,7 @@ export default function NapcenLandingPage() {
                 variants={fadeInUp}
                 className="w-full"
               >
-                <div className="flex overflow-x-auto lg:overflow-visible pb-12 hide-scrollbar lg:justify-between items-start gap-4 lg:gap-0 snap-x snap-mandatory">
+                <div className="flex overflow-x-auto lg:overflow-visible pb-4 lg:pb-12 hide-scrollbar lg:justify-between items-start gap-4 lg:gap-0 snap-x snap-mandatory">
                   {[
                     {
                       step: "01",
@@ -1064,7 +1068,7 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* ABOUT NAPCEN SECTION */}
-        <section id="about" className="py-24 lg:py-32 bg-white relative overflow-hidden">
+        <section id="about" className="pt-4 pb-16 lg:py-32 bg-white relative overflow-hidden">
           {/* Background Pattern Elements */}
           <div className="absolute inset-0 z-0 pointer-events-none opacity-60">
             {/* Large faint circles in corners */}
@@ -1080,7 +1084,7 @@ export default function NapcenLandingPage() {
           <div className="container mx-auto px-6 max-w-7xl relative z-10 grid lg:grid-cols-[1fr_1fr] gap-16 lg:gap-24 items-center">
 
             {/* Left Image Side */}
-            <div className="relative w-full aspect-square max-w-[550px] mx-auto lg:mx-0 mt-8 lg:mt-0">
+            <div className="relative w-full aspect-square max-w-[550px] mx-auto lg:mx-0 mt-2 lg:mt-0">
 
               {/* Outer faint circle rings */}
               <div className="absolute inset-[-12%] rounded-full border border-blue-200/50 pointer-events-none"></div>
@@ -1151,7 +1155,7 @@ export default function NapcenLandingPage() {
           </div>
         </section>
         {/* QUALITY ASSURANCE SECTION */}
-        <section id="quality" className="pt-24 pb-20 bg-white relative overflow-hidden border-t border-slate-100">
+        <section id="quality" className="pt-12 pb-12 lg:pt-24 lg:pb-20 bg-white relative overflow-hidden border-t border-slate-100">
 
           {/* Right Side Background Scrubber Image */}
           <div className="absolute top-[5%] right-0 w-full lg:w-[50%] h-[90%] pointer-events-none hidden lg:block opacity-90 z-0">
@@ -1286,10 +1290,10 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* WHY NAPCEN SECTION */}
-        <section id="why-napcen" className="py-24 bg-white relative overflow-hidden border-t border-slate-100">
+        <section id="why-napcen" className="py-12 lg:py-24 bg-white relative overflow-hidden border-t border-slate-100">
           <div className="container mx-auto px-6 max-w-7xl relative z-10">
             {/* Header Area */}
-            <div className="mb-20 text-center max-w-4xl mx-auto flex flex-col items-center">
+            <div className="mb-10 lg:mb-20 text-center max-w-4xl mx-auto flex flex-col items-center">
               <span className="text-slate-500 font-bold text-[11px] tracking-[0.2em] uppercase block mb-4">
                 Why industries choose NAPCEN
               </span>
@@ -1360,7 +1364,7 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* NEW REGIONAL COVERAGE & REQUIREMENTS SECTION */}
-        <section className="relative w-full py-24 lg:py-32 bg-white overflow-hidden border-t border-slate-100 flex items-center min-h-[800px]">
+        <section className="relative w-full pt-12 pb-6 lg:py-32 bg-white overflow-hidden border-t border-slate-100 flex items-center lg:min-h-[800px]">
 
           {/* Center Background Elements (Map & Tower) */}
           <div className="absolute inset-0 w-full h-full flex justify-center items-end pointer-events-none z-0 overflow-hidden">
@@ -1378,7 +1382,7 @@ export default function NapcenLandingPage() {
             </div>
 
             {/* The Tower Image */}
-            <div className="relative w-[400px] h-[600px] lg:w-[500px] lg:h-[700px] z-10 bottom-[50px] left-[10%] lg:left-[4%]">
+            <div className="relative w-[400px] h-[600px] lg:w-[500px] lg:h-[700px] z-10 bottom-0 lg:bottom-[50px] left-[10%] lg:left-[4%]">
               <Image
                 src="/Industrial Processing Tower with Yellow Platforms (2).png"
                 alt="Processing Tower"
@@ -1478,18 +1482,18 @@ export default function NapcenLandingPage() {
         </section>
 
         {/* FAQ SECTION */}
-        <section id="faq" className="py-24 bg-white relative overflow-hidden">
+        <section id="faq" className="pt-6 pb-16 lg:py-24 bg-white relative overflow-hidden">
           <div className="container mx-auto px-4 md:px-8 xl:px-12 2xl:px-16 relative z-10">
             <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 items-start">
 
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="sticky top-32">
+              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeInUp} className="lg:sticky lg:top-32">
                 <span className="text-slate-500 font-bold text-[11px] tracking-[0.2em] uppercase block mb-4">
                   WET SCRUBBER FAQ
                 </span>
-                <h2 className="text-4xl md:text-5xl lg:text-[52px] xl:text-[56px] font-black text-[#0f1b3a] leading-[1.05] tracking-tight mb-6 pr-4 xl:pr-8">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[52px] xl:text-[56px] font-black text-[#0f1b3a] leading-[1.08] sm:leading-[1.05] tracking-tight mb-6 pr-4 xl:pr-8">
                   Questions engineers and buyers ask before <span className="text-primary-blue">selecting a scrubber</span>
                 </h2>
-                <p className="text-slate-500 text-lg mb-10 max-w-lg leading-relaxed font-medium">
+                <p className="text-slate-500 text-base sm:text-lg mb-8 lg:mb-10 max-w-lg leading-relaxed font-medium">
                   Selection depends on the emission stream. These answers provide a starting point; final equipment design requires project-specific data.
                 </p>
               </motion.div>
