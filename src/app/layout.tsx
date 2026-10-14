@@ -13,8 +13,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NAPCEN | Industrial Air Pollution Control",
-  description: "Engineered solutions for cleaner industrial air.",
+  title: "Wet Scrubber Manufacturer in India | Industrial Wet Scrubber Systems | NAPCEN",
+  description: "Purpose-engineered wet scrubber systems for chemical fumes, acid gases, soluble contaminants, and particulate-laden exhaust by NAPCEN in India.",
   icons: {
     icon: '/Napcen-logo.webp',
   },

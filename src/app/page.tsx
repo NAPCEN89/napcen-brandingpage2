@@ -9,6 +9,7 @@ import ThreeBackground from "@/components/napcen-landing/ThreeBackground";
 import LogoTicker from "@/components/napcen-landing/LogoTicker";
 
 import { CircularTestimonials } from '@/components/ui/circular-testimonials';
+import CurvedMenu from "@/components/ui/curved-menu";
 
 // --- ANIMATION VARIANTS ---
 const fadeInUp: Variants = {
@@ -150,6 +151,7 @@ export default function NapcenLandingPage() {
             <Image src="/Napcen-logo.webp" alt="NAPCEN Logo" width={140} height={50} className="object-contain" />
           </button>
 
+          {/* Desktop Nav */}
           <nav className="hidden md:flex gap-8 text-sm font-bold text-slate-700">
             <button onClick={() => scrollToSection("products")} className="hover:text-primary-blue transition-colors">Scrubbers</button>
             <button onClick={() => scrollToSection("process")} className="hover:text-primary-blue transition-colors">How it works</button>
@@ -157,8 +159,12 @@ export default function NapcenLandingPage() {
             <button onClick={() => scrollToSection("industries")} className="hover:text-primary-blue transition-colors">Industries</button>
             <button onClick={() => scrollToSection("about")} className="hover:text-primary-blue transition-colors">Company</button>
             <button onClick={() => scrollToSection("faq")} className="hover:text-primary-blue transition-colors">FAQ</button>
-
           </nav>
+
+          {/* Mobile Curved Navigation Menu */}
+          <div className="md:hidden">
+            <CurvedMenu />
+          </div>
         </div>
       </header>
 
