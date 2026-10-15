@@ -266,8 +266,8 @@ export default function NapcenLandingPage() {
 
                     <div className="grid grid-cols-2 gap-4 xl:gap-5">
                       <div className="flex flex-col gap-2">
-                        <label className="text-[13px] font-bold text-[#0f1b3a]">Select scrubber / duty</label>
-                        <select value={formData.scrubber} onChange={(e) => setFormData({ ...formData, scrubber: e.target.value })} className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue text-slate-700 transition-all font-medium shadow-sm">
+                        <label className="text-[13px] font-bold text-[#0f1b3a]">Select scrubber / duty  *</label>
+                        <select required value={formData.scrubber} onChange={(e) => setFormData({ ...formData, scrubber: e.target.value })} className="w-full bg-white border border-slate-300 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-primary-blue focus:ring-1 focus:ring-primary-blue text-slate-700 transition-all font-medium shadow-sm">
                           <option value="">Select scrubber / duty</option>
                           <option>Packed Bed Wet Scrubber</option>
                           <option>Venturi Scrubber</option>
@@ -467,7 +467,7 @@ export default function NapcenLandingPage() {
                   desc: "Large wetted packing area supports efficient gas-liquid contact for soluble and reactive gaseous contaminants. Available as a process-specific absorption system with recirculation and mist elimination.",
                   btnText: "Request design review →",
                   icon: Droplet,
-                  image: "/Industrial Processing Tower with Yellow Platforms.png",
+                  image: "/Stainless Steel Process Tower with Yellow Railings.png",
                   equipmentSelect: "Packed Bed Wet Scrubber",
                   filterTag: "Scrubbers"
                 },

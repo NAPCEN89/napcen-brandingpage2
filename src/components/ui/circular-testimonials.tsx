@@ -40,6 +40,8 @@ function calculateGap(width: number) {
   const maxWidth = 1456;
   const minGap = 60;
   const maxGap = 86;
+  if (width < 480) return 32;
+  if (width < 768) return 44;
   if (width <= minWidth) return minGap;
   if (width >= maxWidth)
     return Math.max(minGap, maxGap + 0.06018 * (width - maxWidth));
@@ -126,7 +128,7 @@ export const CircularTestimonials = ({
   // Compute transforms for each image (always show 3: left, center, right)
   function getImageStyle(index: number): React.CSSProperties {
     const gap = calculateGap(containerWidth);
-    const maxStickUp = gap * 0.8;
+    const maxStickUp = containerWidth < 768 ? gap * 0.5 : gap * 0.8;
     const offset = (index - activeIndex + testimonialsLength) % testimonialsLength;
     // const zIndex = testimonialsLength - Math.abs(offset);
     const isActive = index === activeIndex;
@@ -176,23 +178,23 @@ export const CircularTestimonials = ({
   };
 
   return (
-    <div className="w-full max-w-4xl p-8">
-      <div className="grid md:grid-cols-2 gap-20">
+    <div className="w-full max-w-4xl p-4 sm:p-8">
+      <div className="grid md:grid-cols-2 gap-8 md:gap-20">
         {/* Images */}
-        <div className="relative w-full h-[24rem] perspective-[1000px]" ref={imageContainerRef}>
+        <div className="relative w-full h-48 sm:h-64 md:h-[24rem] perspective-[1000px]" ref={imageContainerRef}>
           {testimonials.map((testimonial, index) => (
             <img
               key={testimonial.src}
               src={testimonial.src}
               alt={testimonial.name}
-              className="absolute w-full h-full object-contain bg-white p-8 rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              className="absolute w-full h-full object-contain bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.15)]"
               data-index={index}
               style={getImageStyle(index)}
             />
           ))}
         </div>
         {/* Content */}
-        <div className="flex flex-col justify-between">
+        <div className="flex flex-col justify-between items-center md:items-start text-center md:text-left w-full">
           <AnimatePresence mode="wait">
             <motion.div
               key={activeIndex}
@@ -201,21 +203,22 @@ export const CircularTestimonials = ({
               animate="animate"
               exit="exit"
               transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="w-full flex flex-col items-center md:items-start"
             >
               <h3
-                className="font-bold mb-1"
+                className="font-bold mb-1 text-center md:text-left w-full"
                 style={{ color: colorName, fontSize: fontSizeName }}
               >
                 {activeTestimonial.name}
               </h3>
               <p
-                className="mb-8"
+                className="mb-6 md:mb-8 text-center md:text-left w-full"
                 style={{ color: colorDesignation, fontSize: fontSizeDesignation }}
               >
                 {activeTestimonial.designation}
               </p>
               <motion.p
-                className="leading-relaxed"
+                className="leading-relaxed text-center md:text-left w-full"
                 style={{ color: colorTestimony, fontSize: fontSizeQuote }}
               >
                 {activeTestimonial.quote.split(" ").map((word, i) => (
@@ -244,7 +247,7 @@ export const CircularTestimonials = ({
               </motion.p>
             </motion.div>
           </AnimatePresence>
-          <div className="flex gap-6 pt-12 md:pt-0">
+          <div className="flex gap-6 pt-6 md:pt-0 justify-center md:justify-start w-full">
             <button
               className="w-12 h-12 rounded-full flex items-center justify-center cursor-pointer transition-colors border-none"
               onClick={handlePrev}
